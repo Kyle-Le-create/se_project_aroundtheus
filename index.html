@@ -6,14 +6,19 @@
     <meta content=" ie=edge" http-equiv="X-UA-Compatible" />
     <title>Around The U.S</title>
     <link href="./pages/index.css" rel="stylesheet" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
-        <img src="./images/Logo (2).svg" alt="Around the U.S logo" />
+        <img
+          src="./images/Logo (2).svg"
+          alt="Around the U.S logo"
+          class="header__logo"
+        />
       </header>
-      <main class="content">
-        <section class="profile">
+      <main class="content page__section">
+        <section class="profile page__section">
           <img
             src="./images/jacques-cousteau.jpg"
             alt="Avatar"
@@ -26,6 +31,55 @@
           </div>
           <button class="profile__add-button"></button>
         </section>
+        <section class="cards page__section">
+          <ul class="card__list">
+            <li class="card">
+              <img src="./images/yosemite.jpg" class="card__image" />
+              <div class="card__description">
+                <h2 class="card__description-title">Yosemite Valle</h2>
+                <button class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./images/lake-louise.jpg" class="card__image" />
+              <div class="card__description">
+                <h2 class="card__description-title">Lake Louise</h2>
+                <button class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./images/bald-mountains.jpg" class="card__image" />
+              <div class="card__description">
+                <h2 class="card__description-title">Bald Mountains</h2>
+                <button class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./images/latemar.jpg" class="card__image" />
+              <div class="card__description">
+                <h2 class="card__description-title">Latemar</h2>
+                <button class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./images/vanoise.jpg" class="card__image" />
+              <div class="card__description">
+                <h2 class="card__description-title">Vanoise National Park</h2>
+                <button class="card__like-button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./images/lago.jpg" class="card__image" />
+              <div class="card__description">
+                <h2 class="card__description-title">Lago di Braies</h2>
+                <button class="card__like-button"></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <footer class="footer page__section">
+          <p class="footer__copyright">&copy; 2022 Around The U.S</p>
+        </footer>
       </main>
     </div>
   </body>
