@@ -41,6 +41,9 @@
   grid-area: description;
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile__add-button {
@@ -60,6 +63,16 @@
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
+}
+
+.profile__add-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
