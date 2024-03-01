@@ -7,3 +7,5 @@ This page for this project can be found: https://github.com/Kyle-Le-create/se_pr
 **Overview**
 
 This project is part of TripleTen's Software Engineering program that uses advance CSS, custom fonts, and media queries. Plan to adjust the project and enhanced my capabilities fot HTML/CSS.
+
+Video: https://vimeo.com/918486747/e31e786e12?share=copy
