@@ -20,7 +20,7 @@
   grid-area: title;
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
-  font-size: normal;
+  font-style: normal;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -86,7 +86,6 @@
   }
 
   .profile__title {
-    font-weight: 500;
     font-size: 22px;
     line-height: 26px;
     font-family: "Inter", Arial, sans-serif;
