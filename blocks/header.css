@@ -1,11 +1,11 @@
 .header {
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding: 45px 0 41px;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .header__logo {
   max-width: 173px;
-  padding-bottom: 41px;
 }
 
 @media screen and (max-width: 776px) {
