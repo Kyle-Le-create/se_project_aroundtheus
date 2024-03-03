@@ -12,7 +12,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 776px) {
+@media screen and (max-width: 880px) {
   .cards__list {
     display: flex;
     flex-wrap: wrap;
