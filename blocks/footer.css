@@ -1,8 +1,9 @@
 .footer {
   display: flex;
-  align-content: center;
+  width: 100%;
+  align-items: baseline;
   max-width: 880px;
-  margin: 67px 0 60px;
+  margin: 67px auto 60px auto;
 }
 
 .footer__copyright {
@@ -10,18 +11,17 @@
   font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 1.2;
   margin: 0;
 }
 
 @media screen and (max-width: 320px) {
   .footer {
     max-width: 282px;
-    margin: 48px 0 36px;
+    margin: 48px 19px 36px;
   }
 
   .footer__copyright {
     font-size: 14px;
-    line-height: 17px;
   }
 }

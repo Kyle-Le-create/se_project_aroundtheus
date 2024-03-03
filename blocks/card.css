@@ -1,14 +1,14 @@
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 10px 10px 0 0;
-  list-style: none;
+  border-radius: 10px;
+  list-style-type: none;
+  overflow: hidden;
 }
 
 .card__image {
   width: 282px;
   height: 282px;
-  border-radius: 10px 10px 0 0;
 }
 
 .card__description {
@@ -29,11 +29,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: "Inter", Arial, sans-serif;
   font-weight: 900;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 1.2;
   margin: 0;
+  max-width: 219px;
 }
 
 .card__like-button {
@@ -47,6 +47,5 @@
 
 .card__like-button:hover {
   opacity: 50%;
-  transition: opacity;
   cursor: pointer;
 }
