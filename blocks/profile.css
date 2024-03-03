@@ -63,7 +63,7 @@
   object-fit: cover;
   background-position: center;
   margin-right: 30px;
-  margin: 0;
+  margin-left: 10px;
 }
 
 .profile__add-button:hover {
