@@ -2,7 +2,7 @@
 
 ### Page
 
-This page for this project can be found: https://github.com/Kyle-Le-create/se_project_aroundtheus.git
+This page for this project can be found: https://kyle-le-create.github.io/se_project_aroundtheus/
 
 **Overview**
 
