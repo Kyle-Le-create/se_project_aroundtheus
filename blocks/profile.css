@@ -81,10 +81,6 @@
     line-height: 1.2;
     font-size: 30px;
   }
-
-  .profile__add-button {
-    margin-right: 70px;
-  }
 }
 
 @media screen and (min-width: 880px) {
@@ -93,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 620px) {
   .profile {
     flex-direction: column;
     padding: 0;

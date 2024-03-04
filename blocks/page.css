@@ -14,13 +14,17 @@
 .page__content {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  padding: 0 20px;
   min-height: 100vh;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 620px) {
   .page__section {
     gap: inherit;
     max-width: 320px;
+  }
+
+  .page__content {
+    padding: 0;
   }
 }
