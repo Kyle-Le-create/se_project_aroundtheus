@@ -118,13 +118,13 @@
     width: 100%;
     font-size: 14px;
     text-align: center;
-    margin-top: 14px;
+    margin-top: 10px;
+    margin: 0;
   }
 
   .profile__add-button {
     margin: 0 auto;
     width: 282px;
-    border: 2px solid white;
   }
 
   .profile__edit-button {
