@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  padding: 19px;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  visibility: hidden;
+}
+
+.modal__opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container {
+  background-color: white;
+  margin: auto;
+  padding: 36px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal__close {
+  background-image: url(../images/Close\ Icon.svg);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+}
+
+.modal__heading {
+  color: black;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+}
