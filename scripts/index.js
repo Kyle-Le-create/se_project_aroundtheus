@@ -37,7 +37,7 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 const profileEditForm = profileEditModal.querySelector(".modal__form");
-const cardListEl = document.querySelector(".card__list");
+const cardListElement = document.querySelector(".card__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -49,18 +49,20 @@ function closePopop() {
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__description-title");
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardTitleElement = cardElement.querySelector(
+    ".card__description-title"
+  );
 
-  cardImageEl.src = cardData.link;
-  cardTitleEl.textContent = cardData.name;
-  cardImageEl.alt = cardData.name;
+  cardImageElement.src = cardData.link;
+  cardTitleElement.textContent = cardData.name;
+  cardImageElement.alt = cardData.name;
   return cardElement;
 }
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
+  cardListElement.prepend(getCardElement(cardData));
 });
 // Event Handlers
 
