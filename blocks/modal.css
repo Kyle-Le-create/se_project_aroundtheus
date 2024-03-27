@@ -29,18 +29,20 @@
 .modal__close {
   background-image: url(../images/Close\ Icon.svg);
   background-repeat: no-repeat;
-  background-size: contain;
   border: none;
   background-color: transparent;
-  cursor: pointer;
   bottom: calc(100% + 5px);
   left: calc(100% + 5px);
-  background-repeat: no-repeat;
   background-size: 35px 35px;
   position: absolute;
   height: 40px;
   width: 40px;
   padding: 0;
+}
+
+.modal__close:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -71,8 +73,6 @@
 
 .modal__input:last-of-type {
   margin-bottom: 48px;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .modal__submit-button {
@@ -82,9 +82,12 @@
   width: 358px;
   border-radius: 2px;
   padding: 0;
+  font-size: 18px;
+  font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   line-height: 1.2;
   transition: opacity 0.35s;
+  border-bottom: 0;
 }
 
 .modal__submit-button:hover {
@@ -104,8 +107,8 @@
   }
 
   .modal__container {
-    margin: 123px 19px;
     padding: 25px 22px;
+    margin: 123px 19px;
   }
 
   .modal__input {
@@ -117,5 +120,10 @@
     width: 238px;
     height: 46px;
     font-size: 14px;
+  }
+
+  .modal__close {
+    top: -60px;
+    left: 250px;
   }
 }
