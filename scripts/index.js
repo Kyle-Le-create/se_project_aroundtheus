@@ -84,3 +84,9 @@ profileEditButton.addEventListener("click", () => {
 profileEditCloseButton.addEventListener("click", closePopop);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
+// For loop that inserts a card
+
+initialCards.forEach((cardData) => {
+  cardsWrap.prepend(getCardElement(cardData));
+});
