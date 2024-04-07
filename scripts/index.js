@@ -77,8 +77,8 @@ function openModal(modal) {
 // Event Listeners
 
 profileEditButton.addEventListener("click", () => {
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
 
