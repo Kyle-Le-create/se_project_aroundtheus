@@ -73,6 +73,11 @@ function getCardElement(cardData) {
   const cardTitleElement = cardElement.querySelector(
     ".card__description-title"
   );
+  const likeButton = cardElement.querySelector(".card__like-button");
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
 
   cardImageElement.src = cardData.link;
   cardTitleElement.textContent = cardData.name;
@@ -118,10 +123,3 @@ addCardModalCloseButton.addEventListener("click", () =>
 // For loop that inserts a card
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
-
-const likeButtons = document.querySelectorAll(".card__like-button");
-likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-});
