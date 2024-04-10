@@ -118,3 +118,10 @@ addCardModalCloseButton.addEventListener("click", () =>
 // For loop that inserts a card
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
+
+const likeButtons = document.querySelectorAll(".card__like-button");
+likeButtons.forEach((likeButton) => {
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+});
