@@ -55,3 +55,12 @@
 .card__like-button:hover {
   opacity: 50%;
 }
+
+.card__trash-button {
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  width: 18px;
+  height: 19.3px;
+  border: 0;
+  top: 20px;
+  right: 20px;
+}
