@@ -40,6 +40,10 @@ const cardListElement = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const addNewCardButton = document.querySelector(".profile__add-button");
+const previewImageModal = document.querySelector("#modal-image-preview");
+const modalImageCloseButton = previewImageModal.querySelector(
+  "#modal__image-close-button"
+);
 
 // Form data
 
@@ -51,6 +55,15 @@ const cardTitleInput = addCardFormElement.querySelector(
   ".modal__input_type_title"
 );
 const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+
+// Templates
+
+const previewImageElement = previewImageModal.querySelector(
+  ".modal__image-element"
+);
+const previewImageElementTitle = previewImageModal.querySelector(
+  ".modal__image-caption"
+);
 
 // Functions
 
@@ -100,6 +113,11 @@ function handleAddCardSubmit(e) {
   cardListElement.prepend(cardElement);
   closePopop(addCardModal);
 }
+
+const trashButton = cardElement.querySelector(".card__trash-button");
+trashButton.addEventListener("click", () => {
+  cardElement.remove();
+});
 
 // Event Listeners
 
