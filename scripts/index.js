@@ -96,6 +96,7 @@ function getCardElement(cardData) {
     modalImage.src = cardData.link;
     modalImage.alt = cardData.name;
     modalTitle.textContent = cardData.name;
+    openModal(imageModal);
   });
 
   cardImageElement.src = cardData.link;
@@ -103,6 +104,13 @@ function getCardElement(cardData) {
   cardImageElement.alt = cardData.name;
   return cardElement;
 }
+
+const closeImageModalButton = document.querySelector(
+  "#modal__image-close-button"
+);
+closeImageModalButton.addEventListener("click", () =>
+  closePopop(document.querySelector(".modal__preview"))
+);
 
 function handleProfileEditSubmit(e) {
   e.preventDefault();
