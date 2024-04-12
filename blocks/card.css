@@ -59,10 +59,14 @@
 
 .card__trash-button {
   background: transparent url(../images/Trash.svg) center no-repeat;
-  position: relative;
+  position: absolute;
   width: 18px;
-  height: 19.3px;
+  height: 21px;
   border: 0;
   top: 20px;
   right: 20px;
+  padding: 0;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
 }
