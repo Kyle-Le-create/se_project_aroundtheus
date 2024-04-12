@@ -92,6 +92,11 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__like-button_active");
   });
 
+  const trashButton = cardElement.querySelector(".card__trash-button");
+  trashButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
   cardImageElement.src = cardData.link;
   cardTitleElement.textContent = cardData.name;
   cardImageElement.alt = cardData.name;
@@ -113,11 +118,6 @@ function handleAddCardSubmit(e) {
   cardListElement.prepend(cardElement);
   closePopop(addCardModal);
 }
-
-const trashButton = cardElement.querySelector(".card__trash-button");
-trashButton.addEventListener("click", () => {
-  cardElement.remove();
-});
 
 // Event Listeners
 
