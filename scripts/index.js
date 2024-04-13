@@ -113,7 +113,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopop(profileEditModal);
+  closeModal(profileEditModal);
 }
 
 function handleAddCardSubmit(e) {
@@ -122,7 +122,7 @@ function handleAddCardSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListElement);
   cardListElement.prepend(cardElement);
-  closePopop(addCardModal);
+  closemModal(addCardModal);
 }
 
 // Event Listeners
