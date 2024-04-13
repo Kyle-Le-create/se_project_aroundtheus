@@ -105,12 +105,9 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-const closeImageModalButton = document.querySelector(
-  "#modal__image-close-button"
-);
-closeImageModalButton.addEventListener("click", () =>
-  closePopop(document.querySelector(".modal__preview"))
-);
+modalImageCloseButton.addEventListener("click", () => {
+  closeModal(previewImageModal);
+});
 
 function handleProfileEditSubmit(e) {
   e.preventDefault();
