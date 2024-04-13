@@ -121,7 +121,7 @@ function handleAddCardSubmit(e) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListElement);
-  closemModal(addCardModal);
+  closeModal(addCardModal);
 }
 
 // Event Listeners
