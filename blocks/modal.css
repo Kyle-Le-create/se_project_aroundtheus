@@ -145,6 +145,20 @@
   text-align: left;
 }
 
+.modal__input_type_error {
+  color: #ff0000;
+  font-style: underline;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.21;
+  border-bottom: 1px solid #ff0000;
+  border-bottom: none;
+}
+
+.modal__error-visible {
+  border: none;
+}
+
 @media screen and (max-width: 630px) {
   .modal {
     align-items: baseline;
