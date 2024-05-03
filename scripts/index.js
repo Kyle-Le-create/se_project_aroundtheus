@@ -124,6 +124,13 @@ function handleAddCardSubmit(e) {
   closeModal(addCardModal);
 }
 
+function escapeKeyListener(e) {
+  if (e.key === "Escape") {
+    const modals = document.querySelectorAll("modal__opened");
+    modals.forEach(closeModal);
+  }
+}
+
 // Event Listeners
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
