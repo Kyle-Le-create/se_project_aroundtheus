@@ -146,17 +146,15 @@
 }
 
 .modal__input_type_error {
-  color: #ff0000;
-  font-style: underline;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.21;
-  border-bottom: 1px solid #ff0000;
-  border-bottom: none;
+  border-bottom: solid 1px #ff0000;
 }
 
 .modal__error-visible {
-  border: none;
+  color: #ff0000;
+  font-size: 12px;
+  line-height: 15px;
+  position: relative;
+  bottom: 25px;
 }
 
 @media screen and (max-width: 630px) {

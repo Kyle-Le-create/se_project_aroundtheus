@@ -60,7 +60,7 @@
             required
           />
           <span
-            class="modal__error-visible modal__input_type_error"
+            class="modal__error-visible"
             id="profile-title-input-error"
           ></span>
           <input
@@ -74,10 +74,12 @@
             required
           />
           <span
-            class="modal__error-visible modal__input_type_error"
+            class="modal__error-visible"
             id="profile-description-input-error"
           ></span>
-          <button class="modal__submit-button" type="submit">Save</button>
+          <button class="modal__submit-button" type="submit" disabled>
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -93,14 +95,23 @@
             name="title"
             placeholder="Title"
             id="profile-title-input"
+            minlength="1"
+            maxlength="30"
+            required
           />
+          <span
+            class="modal__error-visible"
+            id="card__title-input-error"
+          ></span>
           <input
             class="modal__input modal__input_type_url"
             type="text"
             name="url"
             placeholder="Image URL"
             id="profile-description-input"
+            required
           />
+          <span class="modal__error-visible" id="card__url-input-error"></span>
           <button
             class="modal__submit-button modal__button_disabled"
             type="submit"
