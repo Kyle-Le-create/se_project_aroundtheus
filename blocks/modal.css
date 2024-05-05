@@ -152,9 +152,10 @@
 .modal__error-visible {
   color: #ff0000;
   font-size: 12px;
-  line-height: 15px;
-  position: relative;
-  bottom: 25px;
+  font-weight: 400;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 14.5px;
+  border-bottom: #ff0000;
 }
 
 @media screen and (max-width: 630px) {
