@@ -60,10 +60,14 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  // Stop listening for escape key
+  document.removeEventListener("keydown", escapeKeyListener);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  // Start listening for escape key
+  document.addEventListener("keydown", escapeKeyListener);
 }
 
 function renderCard(cardData) {
@@ -126,8 +130,8 @@ function handleAddCardSubmit(e) {
 
 function escapeKeyListener(e) {
   if (e.key === "Escape") {
-    const modals = document.querySelectorAll("modal__opened");
-    modals.forEach(closeModal);
+    const openModal = document.querySelector(".modal_opened");
+    closeModal(openModal);
   }
 }
 
