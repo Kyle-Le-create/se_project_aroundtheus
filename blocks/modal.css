@@ -155,10 +155,6 @@
   align-items: stretch;
 }
 
-.modal__error_visible {
-  visibility: visible;
-}
-
 .modal__error {
   color: #ff0000;
   font-size: 12px;
@@ -169,6 +165,12 @@
   position: absolute;
   align-items: stretch;
   visibility: hidden;
+  top: 30px;
+  left: 2px;
+}
+
+.modal__error_visible {
+  visibility: visible;
 }
 
 @media screen and (max-width: 630px) {
