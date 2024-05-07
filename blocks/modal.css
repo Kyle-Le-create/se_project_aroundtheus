@@ -76,6 +76,7 @@
   line-height: 1.2;
   font-weight: 400;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .modal__input:last-of-type {
