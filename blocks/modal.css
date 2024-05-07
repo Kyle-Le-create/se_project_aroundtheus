@@ -13,12 +13,13 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: visibility 0.5s, opacity 0.05s linear;
+  transition: visibility 0s 0.5s, opacity 0.05s linear;
 }
 
 .modal_opened {
   opacity: 1;
   visibility: visible;
+  transition-delay: 0s;
 }
 
 .modal__container {
@@ -149,13 +150,20 @@
   border-bottom: solid 1px #ff0000;
 }
 
+.modal__error_wrapper {
+  position: relative;
+  align-items: stretch;
+}
+
 .modal__error-visible {
   color: #ff0000;
   font-size: 12px;
   font-weight: 400;
   font-family: "Inter", Arial, sans-serif;
-  line-height: 14.5px;
+  line-height: 15px;
   border-bottom: #ff0000;
+  position: absolute;
+  align-items: stretch;
 }
 
 @media screen and (max-width: 630px) {
