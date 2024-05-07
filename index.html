@@ -49,7 +49,7 @@
         <button class="modal__close" type="button"></button>
         <h3 class="modal__title">Edit Profile</h3>
         <form class="modal__form" name="profile-edit">
-          <label class="modal__error-wrapper">
+          <label class="modal__error_wrapper">
             <input
               class="modal__input"
               type="text"
@@ -61,11 +61,11 @@
               required
             />
             <span
-              class="modal__error-visible"
+              class="modal__error modal__error_visible"
               id="profile-title-input-error"
             ></span>
           </label>
-          <label class="modal__error-wrapper">
+          <label class="modal__error_wrapper">
             <input
               class="modal__input"
               type="text"
@@ -77,7 +77,7 @@
               required
             />
             <span
-              class="modal__error-visible"
+              class="modal__error modal__error_visible"
               id="profile-description-input-error"
             ></span>
           </label>
@@ -93,7 +93,7 @@
         <button class="modal__close" type="button"></button>
         <h3 class="modal__title">New Place</h3>
         <form class="modal__form" name="add-card-form">
-          <label class="modal__error-wrapper">
+          <label class="modal__error_wrapper">
             <input
               class="modal__input modal__input_type_title"
               type="text"
@@ -105,11 +105,11 @@
               required
             />
             <span
-              class="modal__error-visible"
+              class="modal__error modal__error_visible"
               id="card-title-input-error"
             ></span>
           </label>
-          <label class="modal__error-wrapper">
+          <label class="modal__error_wrapper">
             <input
               class="modal__input modal__input_type_url"
               type="text"
@@ -118,7 +118,10 @@
               id="card-url-input"
               required
             />
-            <span class="modal__error-visible" id="card-url-input-error"></span>
+            <span
+              class="modal__error modal__error_visible"
+              id="card-url-input-error"
+            ></span>
           </label>
           <button
             class="modal__submit-button modal__button_disabled"
