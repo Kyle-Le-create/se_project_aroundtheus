@@ -103,6 +103,12 @@
   opacity: 0.8;
 }
 
+.modal__button_disabled {
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
+
 .modal__container_image-preview {
   background: transparent;
   display: flex;
