@@ -1,6 +1,3 @@
-// enabling validation by calling enableValidation()
-// pass all the settings on call
-
 function showInputError(
   formElement,
   inputElement,

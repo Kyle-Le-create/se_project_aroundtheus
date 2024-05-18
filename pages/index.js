@@ -1,4 +1,4 @@
-import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -27,13 +27,14 @@ const initialCards = [
   },
 ];
 
-const cardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };
-
-const card = new Card(cardData, "#card-template");
-card.getView();
 
 // Elements
 
@@ -165,3 +166,18 @@ closeModal(addCardModal);
 // For loop that inserts a card
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
+
+const formValidator = {};
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement);
+    const formName = formElement.getAttribute("name");
+
+    formValidator[formName] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(config);
