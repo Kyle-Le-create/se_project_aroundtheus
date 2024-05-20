@@ -1,3 +1,4 @@
+import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
@@ -83,6 +84,11 @@ function openModal(modal) {
   modal.addEventListener("mousedown", handlePopupClose);
 }
 
+const createCard = (data) => {
+  const card = new Card(data, "#card-template", handleCardClick);
+  return card.getView();
+};
+
 function renderCard(cardData) {
   const cardElement = getCardElement(cardData);
   cardListElement.prepend(cardElement);
@@ -167,17 +173,10 @@ closeModal(addCardModal);
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
 
-const formValidator = {};
+// Enbale Validation
 
-const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector));
-  formList.forEach((formElement) => {
-    const validator = new FormValidator(config, formElement);
-    const formName = formElement.getAttribute("name");
+const addCardFormValidator = new FormValidator(config, addCardFormElement);
+addCardFormValidator.enableValidation();
 
-    formValidator[formName] = validator;
-    validator.enableValidation();
-  });
-};
-
-enableValidation(config);
+const editProfileFormValidator = new FormValidator(config, profileEditForm);
+editProfileFormValidator.enableValidation();
