@@ -16,11 +16,11 @@ class Card {
   }
 
   _setEventListeners() {
-    likeButton.addEventListener("click", () => this._handleLikeIcon());
+    this._likeButton.addEventListener("click", () => this._handleLikeIcon());
 
-    trashButton.addEventListener("click", () => this._handleDeleteCard());
+    this._trashButton.addEventListener("click", () => this._handleDeleteCard());
 
-    cardImageElement.addEventListener("click", () => {
+    this._cardImageElement.addEventListener("click", () => {
       this._handleImageClick({
         name: this._name,
         link: this._link,
@@ -28,9 +28,10 @@ class Card {
     });
   }
 
-  _handleLikeIcon() {
+  _handleLikeButton = () => {
     this._likeButton.classList.toggle("card__like-button_active");
-  }
+    this._likeButton.addEventListener("click", this._handleLikeButton);
+  };
 
   _handleDeleteCard() {
     cardElement.remove();
