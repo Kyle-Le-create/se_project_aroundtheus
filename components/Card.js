@@ -49,13 +49,13 @@ class Card {
       ".card__description-title"
     );
 
-    this._cardImageElement.src = this._cardData.link;
-    this._cardTitleElement.textContent = this._cardData.name;
-    this._cardImageElement.alt = this._cardData.name;
+    this._cardImageElement.src = this._link;
+    this._cardTitleElement.textContent = this._name;
+    this._cardImageElement.alt = this._name;
 
     this._setEventListeners();
 
-    return cardElement;
+    return this._cardElement;
   }
 }
 
