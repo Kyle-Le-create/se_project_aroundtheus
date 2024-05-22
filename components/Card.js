@@ -16,7 +16,7 @@ class Card {
   }
 
   _setEventListeners() {
-    this._likeButton.addEventListener("click", () => this._handleLikeIcon());
+    this._likeButton.addEventListener("click", () => this._handleLikeButton());
 
     this._trashButton.addEventListener("click", () => this._handleDeleteCard());
 
@@ -30,11 +30,10 @@ class Card {
 
   _handleLikeButton = () => {
     this._likeButton.classList.toggle("card__like-button_active");
-    this._likeButton.addEventListener("click", this._handleLikeButton);
   };
 
   _handleDeleteCard() {
-    cardElement.remove();
+    this._cardElement.remove();
     this._cardElement = null;
   }
 
