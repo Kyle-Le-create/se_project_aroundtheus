@@ -6,7 +6,7 @@ class FormValidator {
     this._inactiveButtonClass = config._inactiveButtonClass;
     this._inputErrorClass = config._inputErrorClass;
     this._errorClass = config._errorClass;
-
+    this._config = config;
     this._formElement = formElement;
   }
 
@@ -59,9 +59,9 @@ class FormValidator {
 
   _setEventListeners() {
     this._inputElements = [
-      ...this.formElement.querySelectorAll(this._inputSelector),
+      ...this._formElement.querySelectorAll(this._inputSelector),
     ];
-    this._submitButton = this.formElement.querySelector(
+    this._submitButton = this._formElement.querySelector(
       this._submitButtonSelector
     );
 
@@ -77,7 +77,7 @@ class FormValidator {
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-    this._setEventListeners(this._formElement, options);
+    this._setEventListeners(this._formElement, this._config);
   }
 }
 
