@@ -147,6 +147,9 @@ function handleAddCardSubmit(e) {
   renderCard({ name, link }, cardListElement);
   e.target.reset();
   closeModal(addCardModal);
+  cardTitleInput.value = "";
+  cardUrlInput.value = "";
+  addCardFormValidator._toggleButtonState;
 }
 
 function handleEscape(e) {
