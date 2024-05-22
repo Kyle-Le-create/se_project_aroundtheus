@@ -84,7 +84,14 @@ function openModal(modal) {
   modal.addEventListener("mousedown", handlePopupClose);
 }
 
-function handleImageClick(cardData) {}
+function handleImageClick(cardData) {
+  {
+    modalImage.src = cardData.link;
+    modalImage.alt = cardData.name;
+    modalTitle.textContent = cardData.name;
+    openModal(previewImageModal);
+  }
+}
 
 const createCard = (data) => {
   const card = new Card(data, "#card-template", handleImageClick);
