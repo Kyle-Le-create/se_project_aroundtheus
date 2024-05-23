@@ -53,12 +53,12 @@ class FormValidator {
     this._hideInputError(formElement, inputElement, options);
   }
 
-  _toggleButtonState(this._inputElements, this._submitButton, { this._inactiveButtonClass }) {
-    if (hasInvalidInput(this._inputElements)) {
-      disableButton(this._submitButton, this._inactiveButtonClass);
+  _toggleButtonState(inputElements, submitButton, inactiveButtonClass) {
+    if (hasInvalidInput(inputElements)) {
+      disableButton(submitButton, inactiveButtonClass);
       return;
     }
-    enableButton(this._submitButton, this._inactiveButtonClass);
+    enableButton(submitButton, inactiveButtonClass);
   }
 
   _setEventListeners() {
