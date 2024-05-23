@@ -99,12 +99,22 @@
 }
 
 .modal__submit-button:hover {
-  cursor: pointer;
+  cursor: default;
   opacity: 0.8;
 }
 
+.modal__button:hover:not(:disabled) {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.modal__button_disabled:hover {
+  opacity: 1;
+  cursor: default;
+}
+
 .modal__button_disabled {
-  background-color: #fff;
+  background-color: #ffffff;
   border-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.2);
 }

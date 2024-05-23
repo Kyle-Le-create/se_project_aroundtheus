@@ -29,9 +29,7 @@ class FormValidator {
   }
 
   _hasInvalidInput(inputList) {
-    return !inputList.every(
-      (inputElement) => this._inputElement.validity.valid
-    );
+    return !inputList.every((inputElement) => inputElement.validity.valid);
   }
 
   _resetValidation() {
@@ -60,7 +58,7 @@ class FormValidator {
       this._disableButton();
       return;
     }
-    enableButton();
+    this._enableButton();
   }
 
   _setEventListeners() {
