@@ -29,7 +29,9 @@ class FormValidator {
   }
 
   _hasInvalidInput(inputList) {
-    return !inputList.every((inputElement) => inputElement.validity.valid);
+    return !inputList.every(
+      (inputElement) => this._inputElement.validity.valid
+    );
   }
 
   _resetValidation() {
@@ -53,12 +55,12 @@ class FormValidator {
     this._hideInputError(formElement, inputElement, options);
   }
 
-  _toggleButtonState(inputElements, submitButton, inactiveButtonClass) {
-    if (hasInvalidInput(inputElements)) {
-      disableButton(submitButton, inactiveButtonClass);
+  _toggleButtonState() {
+    if (this._hasInvalidInput(this._inputElements)) {
+      this._disableButton();
       return;
     }
-    enableButton(submitButton, inactiveButtonClass);
+    enableButton();
   }
 
   _setEventListeners() {
