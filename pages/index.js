@@ -149,7 +149,7 @@ function handleAddCardSubmit(e) {
   closeModal(addCardModal);
   cardTitleInput.value = "";
   cardUrlInput.value = "";
-  addCardFormValidator._toggleButtonState;
+  addCardFormValidator.disableButton();
 }
 
 function handleEscape(e) {
