@@ -48,14 +48,14 @@ class FormValidator {
 
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      return this._showInputError(formElement, inputElement, options);
+      return this._showInputError(inputElement);
     }
-    this._hideInputError(formElement, inputElement, options);
+    this._hideInputError(inputElement);
   }
 
   _toggleButtonState() {
     if (this._hasInvalidInput(this._inputElements)) {
-      this._disableButton();
+      this.disableButton();
       return;
     }
     this._enableButton();
