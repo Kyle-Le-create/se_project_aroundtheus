@@ -109,7 +109,7 @@
 }
 
 .modal__button_disabled:hover {
-  opacity: 1;
+  opacity: 0.2;
   cursor: default;
 }
 
