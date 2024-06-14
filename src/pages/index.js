@@ -168,6 +168,14 @@ function handlePopupClose(evt) {
     closeModal(evt.currentTarget);
   }
 }
+// Profile Form
+
+const userInfo = new UserInfo(".profile__title", ".profile__description");
+
+function handleProfileformSubmit(userData) {
+  profilePopupForm.close();
+  userInfo.setUserInfo(userData);
+}
 
 // Event Listeners
 
