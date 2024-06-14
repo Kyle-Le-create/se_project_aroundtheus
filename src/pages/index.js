@@ -1,7 +1,6 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import "../pages/index.css";
-import Popup from "../components/Popup.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
@@ -48,15 +47,23 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
+cardSection.setEventListerners();
 
-const addCardPopup = new PopupWithForm("#add-card-modal", handleAddCardSubmit);
+const addCardPopup = new PopupWithForm({
+  popupSelector: "#add-card-modal",
+  handleFormSubmit: handleAddCardSubmit,
+});
+addCardPopup.setEventListerners();
+// call seteventlisteners for each modal
 
-const editProfilePopup = new PopupWithForm(
-  "#profile-edit-modal",
-  handleProfileEditSubmit
-);
+const editProfilePopup = new PopupWithForm({
+  popupSelector: "#profile-edit-modal",
+  handleFormSubmit: handleProfileEditSubmit,
+});
+editProfilePopup.setEventListerners();
 
 const imagePreviewPopup = new PopupWithImage(".modal__preview");
+imagePreviewPopup.setEventListerners();
 
 // Form data
 
@@ -166,6 +173,7 @@ function handleAddCardSubmit(e) {
 // //     closeModal(evt.currentTarget);
 // //   }
 // }
+
 // Profile Form
 
 const userInfo = new UserInfo(".profile__title", ".profile__description");
@@ -177,16 +185,17 @@ function handleProfileformSubmit(userData) {
 
 // Event Listeners
 
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+// remove submission
+// profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+// addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   editProfilePopup.open(profileEditModal);
 });
 
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardPopup.open(addCardModal);
+addNewCardButton.addEventListener("click", () => addCardPopup.open());
 
 // For loop that inserts a card
 
