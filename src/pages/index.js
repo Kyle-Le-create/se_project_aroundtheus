@@ -56,7 +56,7 @@ const editProfilePopup = new PopupWithForm(
   handleProfileEditSubmit
 );
 
-const PreviewPopup = new PopupWithImage(".modal__preview");
+const imagePreviewPopup = new PopupWithImage(".modal__preview");
 
 // Form data
 
@@ -88,7 +88,7 @@ function handleImageClick(cardData) {
     modalImage.src = cardData.link;
     modalImage.alt = cardData.name;
     modalTitle.textContent = cardData.name;
-    openModal(previewImageModal);
+    imagePreviewPopup.open(previewImageModal);
   }
 }
 
@@ -123,7 +123,7 @@ function getCardElement(cardData) {
     modalImage.src = cardData.link;
     modalImage.alt = cardData.name;
     modalTitle.textContent = cardData.name;
-    openModal(previewImageModal);
+    imagePreviewPopup.open(previewImageModal);
   });
 
   cardImageElement.src = cardData.link;
