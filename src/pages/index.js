@@ -1,11 +1,12 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import "../pages/index.css";
 import Popup from "../components/Popup.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/constants.js";
-import "../pages/index.css";
+import Section from "../components/Section.js";
 
 const config = {
   formSelector: ".modal__form",
@@ -38,6 +39,25 @@ const modalImageCloseButton = previewImageModal.querySelector(
   "#modal__image-close-button"
 );
 
+const cardSection = new Section(
+  {
+    items: initialCards,
+    renderer: (cardData) => {
+      cardSection.addItem(cardData);
+    },
+  },
+  ".cards__list"
+);
+
+const addCardPopup = new PopupWithForm("#add-card-modal", handleAddCardSubmit);
+
+const editProfilePopup = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditSubmit
+);
+
+const PreviewPopup = new PopupWithImage(".modal__preview");
+
 // Form data
 
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -51,17 +71,17 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 // Functions
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscape);
-  modal.removeEventListener("mousedown", handlePopupClose);
-}
+// function closeModal(modal) {
+//   modal.classList.remove("modal_opened");
+//   document.removeEventListener("keydown", handleEscape);
+//   modal.removeEventListener("mousedown", handlePopupClose);
+// }
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscape);
-  modal.addEventListener("mousedown", handlePopupClose);
-}
+// function openModal(modal) {
+//   modal.classList.add("modal_opened");
+//   document.addEventListener("keydown", handleEscape);
+//   modal.addEventListener("mousedown", handlePopupClose);
+// }
 
 function handleImageClick(cardData) {
   {
@@ -116,7 +136,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closeModal(profileEditModal);
+  editProfilePopup.close(profileEditModal);
 }
 
 function handleAddCardSubmit(e) {
@@ -125,27 +145,27 @@ function handleAddCardSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListElement);
   e.target.reset();
-  closeModal(addCardModal);
+  addCardPopup.close(addCardModal);
   cardTitleInput.value = "";
   cardUrlInput.value = "";
   addCardFormValidator.disableButton();
 }
 
-function handleEscape(e) {
-  if (e.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
-    closeModal(openModal);
-  }
-}
+// function handleEscape(e) {
+//   if (e.key === "Escape") {
+//     const openModal = document.querySelector(".modal_opened");
+//     closeModal(openModal);
+//   }
+// }
 
-function handlePopupClose(evt) {
-  if (
-    evt.target === evt.currentTarget ||
-    evt.target.classList.contains("modal__close")
-  ) {
-    closeModal(evt.currentTarget);
-  }
-}
+// // function handlePopupClose(evt) {
+// //   if (
+// //     evt.target === evt.currentTarget ||
+// //     evt.target.classList.contains("modal__close")
+// //   ) {
+// //     closeModal(evt.currentTarget);
+// //   }
+// }
 // Profile Form
 
 const userInfo = new UserInfo(".profile__title", ".profile__description");
@@ -162,11 +182,11 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  openModal(profileEditModal);
+  editProfilePopup.open(profileEditModal);
 });
 
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-closeModal(addCardModal);
+addCardPopup.open(addCardModal);
 
 // For loop that inserts a card
 
