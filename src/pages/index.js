@@ -47,23 +47,23 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
-cardSection.setEventListerners();
+cardSection.setEventListeners();
 
 const addCardPopup = new PopupWithForm({
   popupSelector: "#add-card-modal",
   handleFormSubmit: handleAddCardSubmit,
 });
-addCardPopup.setEventListerners();
+addCardPopup.setEventListeners();
 // call seteventlisteners for each modal
 
 const editProfilePopup = new PopupWithForm({
   popupSelector: "#profile-edit-modal",
   handleFormSubmit: handleProfileEditSubmit,
 });
-editProfilePopup.setEventListerners();
+editProfilePopup.setEventListeners();
 
 const imagePreviewPopup = new PopupWithImage(".modal__preview");
-imagePreviewPopup.setEventListerners();
+imagePreviewPopup.setEventListeners();
 
 // Form data
 
