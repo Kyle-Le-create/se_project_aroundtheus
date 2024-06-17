@@ -146,12 +146,11 @@ function handleProfileEditSubmit(data) {
   editProfilePopup.close(profileEditModal);
 }
 
-function handleAddCardSubmit(e) {
-  e.preventDefault();
+function handleAddCardSubmit(inputValues) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListElement);
-  e.target.reset();
+  addCardFormElement.reset();
   addCardPopup.close(addCardModal);
   cardTitleInput.value = "";
   cardUrlInput.value = "";
