@@ -94,12 +94,10 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 // }
 
 function handleImageClick(cardData) {
-  {
-    modalImage.src = cardData.link;
-    modalImage.alt = cardData.name;
-    modalTitle.textContent = cardData.name;
-    imagePreviewPopup.open(previewImageModal);
-  }
+  // modalImage.src = cardData.link;
+  // modalImage.alt = cardData.name;
+  // modalTitle.textContent = cardData.name;
+  imagePreviewPopup.open(cardData);
 }
 
 const createCard = (data) => {
@@ -142,8 +140,7 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-function handleProfileEditSubmit(e) {
-  e.preventDefault();
+function handleProfileEditSubmit(data) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   editProfilePopup.close(profileEditModal);
