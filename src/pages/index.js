@@ -64,6 +64,10 @@ editProfilePopup.setEventListeners();
 const imagePreviewPopup = new PopupWithImage(".modal__preview");
 imagePreviewPopup.setEventListeners();
 
+function handleImagePress(data) {
+  imagePreviewPopup.open(data);
+}
+
 // Form data
 
 const profileTitleInput = document.querySelector("#profile-title-input");
