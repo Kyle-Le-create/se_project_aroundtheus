@@ -47,7 +47,6 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
-cardSection.setEventListeners();
 
 const addCardPopup = new PopupWithForm({
   popupSelector: "#add-card-modal",
