@@ -146,13 +146,13 @@ function handleProfileEditSubmit(data) {
 }
 
 function handleAddCardSubmit(inputValues) {
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
-  cardSection.addItem({ name, link }, cardListElement);
+  // const name = cardTitleInput.value;
+  // const link = cardUrlInput.value;
+  cardSection.addItem({ name: inputValues.title, link: inputValues.url });
   addCardFormElement.reset();
   addCardPopup.close();
-  cardTitleInput.value = "";
-  cardUrlInput.value = "";
+  // cardTitleInput.value = "";
+  // cardUrlInput.value = "";
   addCardFormValidator.disableButton();
 }
 
@@ -188,8 +188,9 @@ function handleProfileformSubmit(userData) {
 // addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 profileEditButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
+  const { title, description } = userInfo.getUserInfo();
+  profileTitleInput.value = title;
+  profileDescriptionInput.value = description;
   editProfilePopup.open();
 });
 
