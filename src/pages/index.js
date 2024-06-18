@@ -148,7 +148,7 @@ function handleProfileEditSubmit(data) {
 function handleAddCardSubmit(inputValues) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  renderCard({ name, link }, cardListElement);
+  cardSection.addItem({ name, link }, cardListElement);
   addCardFormElement.reset();
   addCardPopup.close(addCardModal);
   cardTitleInput.value = "";
