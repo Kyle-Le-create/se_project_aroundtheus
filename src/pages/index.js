@@ -41,12 +41,11 @@ const modalImageCloseButton = previewImageModal.querySelector(
 const cardSection = new Section(
   {
     items: initialCards,
-    renderer: (cardData) => {
-      cardSection.addItem(cardData);
-    },
+    renderer: createCard,
   },
   ".cards__list"
 );
+cardSection.renderItems();
 
 const addCardPopup = new PopupWithForm({
   popupSelector: "#add-card-modal",
@@ -198,7 +197,7 @@ addNewCardButton.addEventListener("click", () => addCardPopup.open());
 
 // For loop that inserts a card
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
+// initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
 
 // Enbale Validation
 
