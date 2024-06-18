@@ -4,7 +4,7 @@ export default class UserInfo {
     this._displayJob = document.querySelector(jobSelector);
   }
 
-  GetUserInfo() {
+  getUserInfo() {
     return {
       title: this._displayName.textContent,
       description: this._displayJob.textContent,

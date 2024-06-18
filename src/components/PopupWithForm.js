@@ -17,9 +17,9 @@ export default class PopupWithForm extends Popup {
     super.close();
   }
 
-  _handleEscClose(evt) {
-    super._handleEscClose();
-  }
+  // _handleEscClose(evt) {
+  //   super._handleEscClose();
+  // }
 
   _getInputValues() {
     const formInputs = {};
