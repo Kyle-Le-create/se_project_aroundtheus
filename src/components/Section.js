@@ -13,8 +13,8 @@ export default class Section {
   }
 
   addItem(item) {
-    const newCard = this._renderer(item);
-    this._container.prepend(newCard);
+    const newItem = this._renderer(item);
+    this._container.prepend(newItem);
     // this._container.prepend(item);
   }
 }
