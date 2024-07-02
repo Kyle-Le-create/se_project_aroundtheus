@@ -57,7 +57,6 @@ const addCardPopup = new PopupWithForm({
   handleFormSubmit: handleAddCardSubmit,
 });
 addCardPopup.setEventListeners();
-// call seteventlisteners for each modal
 
 const editProfilePopup = new PopupWithForm({
   popupSelector: "#profile-edit-modal",
