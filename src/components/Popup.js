@@ -15,8 +15,6 @@ export default class Popup {
 
   _handleEscClose = (e) => {
     if (e.key === "Escape") {
-      // use the close method of modal
-      // closeModal(openModal);
       this.close();
     }
   };
