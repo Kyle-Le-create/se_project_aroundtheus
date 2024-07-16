@@ -38,6 +38,16 @@ const modalImageCloseButton = previewImageModal.querySelector(
   "#modal__image-close-button"
 );
 
+fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+  headers: {
+    authorization: "f1ea8f6c-9474-4887-8313-31aaa6ff9aab",
+  },
+})
+  .then((res) => res.json())
+  .then((result) => {
+    console.log(result);
+  });
+
 const createCard = (data) => {
   const card = new Card(data, "#card-template", handleImageClick);
   return card.getView();
