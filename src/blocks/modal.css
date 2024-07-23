@@ -33,6 +33,11 @@
   border-radius: 10px;
 }
 
+.modal__container-delete {
+  width: 362px;
+  height: 109px;
+}
+
 .modal__close {
   background-image: url(../images/Close\ Icon.svg);
   background-repeat: no-repeat;
@@ -178,6 +183,17 @@
 
 .modal__error_visible {
   visibility: visible;
+}
+
+.modal__label-avatar {
+  width: 100%;
+  position: relative;
+  margin-top: 54px;
+}
+
+.modal__container-avatar {
+  height: 272px;
+  width: 430px;
 }
 
 @media screen and (max-width: 630px) {

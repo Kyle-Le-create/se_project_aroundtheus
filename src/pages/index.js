@@ -6,6 +6,8 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards } from "../utils/constants.js";
 import Section from "../components/Section.js";
+import Api from "../components/Api.js";
+import PopupDeleteCard from "..components/PopupDeleteCard.js";
 
 const config = {
   formSelector: ".modal__form",
