@@ -15,4 +15,8 @@ export default class Section {
     const newItem = this._renderer(item);
     this._container.prepend(newItem);
   }
+
+  setItems(items) {
+    this._items = items;
+  }
 }

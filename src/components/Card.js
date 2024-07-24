@@ -1,6 +1,6 @@
 export default class Card {
   constructor(
-    { data, cardSelector, _id, isLiked, userId },
+    { data, _id, isLiked, userId },
     cardSelector,
     handleImageClick,
     handleDeleteClick,
