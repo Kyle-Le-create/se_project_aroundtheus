@@ -40,6 +40,14 @@ const modalImageCloseButton = previewImageModal.querySelector(
   "#modal__image-close-button"
 );
 
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "65e7222e-9077-40ab-ad47-86d360e310e2",
+    "Content-Type": "application/json",
+  },
+});
+
 const createCard = (data) => {
   const card = new Card(
     data,
@@ -175,6 +183,7 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = description;
   editProfilePopup.open();
 });
+api.getUserInfo();
 
 addNewCardButton.addEventListener("click", () => addCardPopup.open());
 
