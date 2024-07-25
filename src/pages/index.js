@@ -12,7 +12,7 @@ import PopupDeleteCard from "../components/PopupDeleteCard.js";
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-button",
+  submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
@@ -48,18 +48,15 @@ const api = new Api({
   },
 });
 
-const editAvatarPopup = new PopupWithForm(
-  "#edit-avatar-modal",
-  handleAvatarFormSubmit
-);
+const editAvatarPopup = new PopupWithForm({
+  popupSelector: "#edit-avatar-modal",
+  handleAvatarFormSubmit,
+});
 editAvatarPopup.setEventListeners();
 
 const profileAvatarForm = document.forms["avatar-form"];
 const profileAvatarButton = document.querySelector(".profile__avatar-button");
-const avatarFormValidator = new FormValidator(
-  constants.config,
-  profileAvatarForm
-);
+const avatarFormValidator = new FormValidator(config, profileAvatarForm);
 avatarFormValidator.enableValidation();
 
 let userId;
