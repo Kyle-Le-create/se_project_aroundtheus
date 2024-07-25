@@ -4,7 +4,8 @@ import "../pages/index.css";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-import { initialCards } from "../utils/constants.js";
+// get rid of this array
+// import { initialCards } from "../utils/constants.js";
 import Section from "../components/Section.js";
 import Api from "../components/Api.js";
 import PopupDeleteCard from "../components/PopupDeleteCard.js";
@@ -66,21 +67,6 @@ profileAvatarButton.addEventListener("click", () => {
   avatarFormValidator.resetValidation();
 });
 
-api
-  .getAppData()
-  .then(([userData, initialCards]) => {
-    userInfo.setUserInfo({
-      title: userData.name,
-      description: userData.about,
-    });
-    userInfo.setUserAvatar({ avatar: userData.avatar });
-    userId = userData._id;
-
-    section.setItems(initialCards);
-    section.renderItems();
-  })
-  .catch(console.error);
-
 const createCard = (data) => {
   const card = new Card(
     data,
@@ -92,14 +78,34 @@ const createCard = (data) => {
   return card.getView();
 };
 
-const cardSection = new Section(
-  {
-    items: initialCards,
-    renderer: createCard,
-  },
-  ".cards__list"
-);
-cardSection.renderItems();
+// const cardSection = new Section(
+//   {
+//     items: initialCards,
+//     renderer: createCard,
+//   },
+//   ".cards__list"
+// );
+// cardSection.renderItems();
+
+let cardSection;
+
+api
+  .getAppData()
+  .then(([userData, initialCards]) => {
+    userInfo.setUserInfo({
+      title: userData.name,
+      description: userData.about,
+    });
+    userInfo.setUserAvatar({ avatar: userData.avatar });
+    userId = userData._id;
+
+    // pass initialCards to constructoir
+    cardSection = new Section();
+
+    // cardSection.setItems(initialCards);
+    cardSection.renderItems();
+  })
+  .catch(console.error);
 
 const addCardPopup = new PopupWithForm({
   popupSelector: "#add-card-modal",
