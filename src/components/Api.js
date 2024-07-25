@@ -24,13 +24,13 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  updateProfileInfo({ name, description }) {
+  updateProfileInfo({ name, subtitle }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
         name,
-        about: description,
+        about: subtitle,
       }),
     }).then(this._handleResponse);
   }

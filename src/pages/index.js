@@ -146,27 +146,29 @@ function handleImageClick(cardData) {
 }
 
 function handleProfileEditSubmit(data) {
-  updateProfileInfo;
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-  editProfilePopup.close();
+  // data is an object with name and subtitle
+  api
+    .updateProfileInfo(data)
+    .then(() => {
+      profileTitle.textContent = profileTitleInput.value;
+      profileDescription.textContent = profileDescriptionInput.value;
+      editProfilePopup.close();
+    })
+    .catch((err) => {
+      console.error(err);
+      alert(`${err}, Could not update user info!`);
+    });
 }
 
 function handleAddCardSubmit(inputValues) {
-  cardSection.addItem({ name: inputValues.title, link: inputValues.url });
   // addCardFormElement.reset();
   // addCardPopup.close();
   // addCardFormValidator.disableButton();
   api
-    .addCard({ name: title, link: url })
+    .addCard({ name: inputValues.title, link: inputValues.url })
     .then((newCardData) => {
-      renderCard({
-        name: newCardData.name,
-        link: newCardData.link,
-        id: newCardData._id,
-        likes: newCardData.likes,
-        userId: userId,
-      });
+      cardSection.addItem(newCardData);
+
       addCardPopup.close();
     })
     .catch(console.error);
@@ -199,23 +201,23 @@ const userInfo = new UserInfo(
   ".profile__image"
 );
 
-function handleProfileformSubmit(userData) {
-  // profilePopupForm.close();
-  // userInfo.setUserInfo(userData);
-  api
-    .updateProfileInfo({
-      name: userData.title,
-      description: userData.description,
-    })
-    .then((updatedUserData) => {
-      userInfo.setUserInfo({
-        title: updatedUserData.name,
-        description: updatedUserData.about,
-      });
-      profilePopup.close();
-    })
-    .catch(console.error);
-}
+// function handleProfileformSubmit(userData) {
+//   // profilePopupForm.close();
+//   // userInfo.setUserInfo(userData);
+//   api
+//     .updateProfileInfo({
+//       name: userData.title,
+//       description: userData.description,
+//     })
+//     .then((updatedUserData) => {
+//       userInfo.setUserInfo({
+//         title: updatedUserData.name,
+//         description: updatedUserData.about,
+//       });
+//       profilePopup.close();
+//     })
+//     .catch(console.error);
+// }
 
 // Event Listeners
 
