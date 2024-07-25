@@ -13,7 +13,7 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch("${this._baseUrl}/users/me", {
+    return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     }).then(this._handleResponse);
   }

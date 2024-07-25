@@ -48,6 +48,42 @@ const api = new Api({
   },
 });
 
+const editAvatarPopup = new PopupWithForm(
+  "#edit-avatar-modal",
+  handleAvatarFormSubmit
+);
+editAvatarPopup.setEventListeners();
+
+const profileAvatarForm = document.forms["avatar-form"];
+const profileAvatarButton = document.querySelector(".profile__avatar-button");
+const avatarFormValidator = new FormValidator(
+  constants.config,
+  profileAvatarForm
+);
+avatarFormValidator.enableValidation();
+
+let userId;
+
+profileAvatarButton.addEventListener("click", () => {
+  editAvatarPopup.open();
+  avatarFormValidator.resetValidation();
+});
+
+api
+  .getAppData()
+  .then(([userData, initialCards]) => {
+    userInfo.setUserInfo({
+      title: userData.name,
+      description: userData.about,
+    });
+    userInfo.setUserAvatar({ avatar: userData.avatar });
+    userId = userData._id;
+
+    section.setItems(initialCards);
+    section.renderItems();
+  })
+  .catch(console.error);
+
 const createCard = (data) => {
   const card = new Card(
     data,
