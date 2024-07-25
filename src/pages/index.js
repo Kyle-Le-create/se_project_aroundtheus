@@ -100,9 +100,11 @@ api
     userId = userData._id;
 
     // pass initialCards to constructoir
-    cardSection = new Section();
+    cardSection = new Section(
+      { items: initialCards, renderer: createCard },
+      ".cards__list"
+    );
 
-    // cardSection.setItems(initialCards);
     cardSection.renderItems();
   })
   .catch(console.error);
@@ -144,6 +146,7 @@ function handleImageClick(cardData) {
 }
 
 function handleProfileEditSubmit(data) {
+  updateProfileInfo;
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   editProfilePopup.close();
