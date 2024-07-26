@@ -51,7 +51,7 @@ const api = new Api({
 
 const editAvatarPopup = new PopupWithForm({
   popupSelector: "#edit-avatar-modal",
-  handleAvatarFormSubmit,
+  handleFormSubmit: handleAvatarFormSubmit,
 });
 editAvatarPopup.setEventListeners();
 
@@ -64,7 +64,7 @@ let userId;
 
 profileAvatarButton.addEventListener("click", () => {
   editAvatarPopup.open();
-  avatarFormValidator.resetValidation();
+  avatarFormValidator._resetValidation();
 });
 
 const createCard = (data) => {
