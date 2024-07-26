@@ -42,6 +42,11 @@ export default class Card {
     });
   }
 
+  _handleDeleteCard() {
+    this._cardElement.remove();
+    this._cardElement = null;
+  }
+
   updateLikes(likes) {
     const likeButton = this._cardElement.querySelector(".card__like-button");
     if (this._isLiked) {
@@ -54,7 +59,6 @@ export default class Card {
 
   getView() {
     this._cardElement = this._getTemplate();
-
     this._likeButton = this._cardElement.querySelector(".card__like-button");
     this._trashButton = this._cardElement.querySelector(".card__trash-button");
 
