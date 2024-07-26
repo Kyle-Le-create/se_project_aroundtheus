@@ -196,6 +196,18 @@
   width: 430px;
 }
 
+.modal__heading {
+  width: 358px;
+  height: 23px;
+  top: 304px;
+  left: 461px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: black;
+}
+
 @media screen and (max-width: 630px) {
   .modal {
     align-items: baseline;

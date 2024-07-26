@@ -239,13 +239,13 @@ addCardFormValidator.enableValidation();
 const editProfileFormValidator = new FormValidator(config, profileEditForm);
 editProfileFormValidator.enableValidation();
 
-function handleDeleteCard(cardId, cardElement) {
+function handleDeleteCard(cardId, card) {
   deleteCardPopup.open();
   deleteCardPopup.handleDeleteConfirm(() => {
     api
       .deleteCard(cardId)
       .then(() => {
-        cardElement.remove();
+        card.handleDeleteCard();
         deleteCardPopup.close();
       })
       .catch(console.error);
