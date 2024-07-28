@@ -150,8 +150,9 @@ function handleProfileEditSubmit(data) {
   api
     .updateProfileInfo(data)
     .then(() => {
-      profileTitle.textContent = profileTitleInput.value;
-      profileDescription.textContent = profileDescriptionInput.value;
+      userInfo.setUserInfo({ title: data.name, description: data.subtitle });
+      // profileTitle.textContent = profileTitleInput.value;
+      // profileDescription.textContent = profileDescriptionInput.value;
       editProfilePopup.close();
     })
     .catch((err) => {
@@ -168,7 +169,8 @@ function handleAddCardSubmit(inputValues) {
     .addCard({ name: inputValues.title, link: inputValues.url })
     .then((newCardData) => {
       cardSection.addItem(newCardData);
-
+      addCardFormElement.reset();
+      addCardFormValidator._resetValidation();
       addCardPopup.close();
     })
     .catch(console.error);
@@ -257,14 +259,14 @@ function handleLikeCard(cardId, cardElement) {
     api
       .unlikeCard(cardId)
       .then((updatedCardData) => {
-        cardElement.updateLikes(updatedCardData.likes);
+        cardElement.updateLikes(updatedCardData.isLiked);
       })
       .catch(console.error);
   } else {
     api
       .likeCard(cardId)
       .then((updatedCardData) => {
-        cardElement.updateLikes(updatedCardData.likes);
+        cardElement.updateLikes(updatedCardData.isLiked);
       })
       .catch(console.error);
   }
