@@ -4,20 +4,10 @@ import "../pages/index.css";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-// get rid of this array
-// import { initialCards } from "../utils/constants.js";
 import Section from "../components/Section.js";
 import Api from "../components/Api.js";
 import PopupDeleteCard from "../components/PopupDeleteCard.js";
-
-const config = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
+import { config } from "../utils/constants.js";
 
 // Elements
 
@@ -64,7 +54,7 @@ let userId;
 
 profileAvatarButton.addEventListener("click", () => {
   editAvatarPopup.open();
-  avatarFormValidator._resetValidation();
+  avatarFormValidator.resetValidation();
 });
 
 const createCard = (data) => {
@@ -99,7 +89,6 @@ api
     userInfo.setUserAvatar({ avatar: userData.avatar });
     userId = userData._id;
 
-    // pass initialCards to constructoir
     cardSection = new Section(
       { items: initialCards, renderer: createCard },
       ".cards__list"
@@ -255,10 +244,11 @@ function handleDeleteCard(cardId, card) {
 }
 
 function handleLikeCard(cardId, cardElement) {
-  if (!cardElement._isLiked) {
+  if (cardElement.getIsLikedState()) {
     api
       .unlikeCard(cardId)
       .then((updatedCardData) => {
+        cardElement.flipLikeState();
         cardElement.updateLikes(updatedCardData.isLiked);
       })
       .catch(console.error);
@@ -266,6 +256,7 @@ function handleLikeCard(cardId, cardElement) {
     api
       .likeCard(cardId)
       .then((updatedCardData) => {
+        cardElement.flipLikeState();
         cardElement.updateLikes(updatedCardData.isLiked);
       })
       .catch(console.error);

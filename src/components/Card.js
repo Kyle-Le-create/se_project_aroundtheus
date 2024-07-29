@@ -47,28 +47,20 @@ export default class Card {
     this._cardElement = null;
   }
 
-  updateLikes(likes) {
-    const likeButton = this._cardElement.querySelector(".card__like-button");
+  getIsLikedState() {
+    return this._isLiked;
+  }
+
+  updateLikes() {
     if (this._isLiked) {
-      likeButton.classList.add("card__like-button_active");
+      this._likeButton.classList.add("card__like-button_active");
     } else {
-      likeButton.classList.remove("card__like-button_active");
+      this._likeButton.classList.remove("card__like-button_active");
     }
+  }
+
+  flipLikeState() {
     this._isLiked = !this._isLiked;
-  }
-
-  renderLikes() {
-    const likeButton = this._cardElement.querySelector(".card__like-button");
-    if (this._isLiked) {
-      likeButton.classList.add("card__like-button_active");
-    } else {
-      likeButton.classList.remove("card__like-button_active");
-    }
-  }
-
-  updateLike(isLiked) {
-    this._isLiked = isLiked;
-    this.renderLikes();
   }
 
   getView() {
@@ -81,7 +73,7 @@ export default class Card {
       ".card__description-title"
     );
 
-    this.updateLikes(this._likes);
+    this.updateLikes();
     this._cardImageElement.src = this._link;
     this._cardTitleElement.textContent = this._name;
     this._cardImageElement.alt = this._name;

@@ -32,7 +32,7 @@ export default class FormValidator {
     return !inputList.every((inputElement) => inputElement.validity.valid);
   }
 
-  _resetValidation() {
+  resetValidation() {
     this._toggleButtonState();
   }
 
@@ -81,6 +81,6 @@ export default class FormValidator {
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-    this._setEventListeners(this._formElement, this._config);
+    this._setEventListeners();
   }
 }
