@@ -5,6 +5,8 @@ export default class PopupDeleteCard extends Popup {
     super({ popupSelector });
     this._popupForm = this._popupElement.querySelector(".modal__form");
     this._popupButton = this._popupElement.querySelector(".modal__button");
+    this._submitButton = this._popupElement.querySelector(".modal__button");
+    this._submitButtonText = this._submitButton.textContent;
   }
 
   handleDeleteConfirm(callback) {
@@ -17,5 +19,12 @@ export default class PopupDeleteCard extends Popup {
       e.preventDefault();
       this._handleDeleteConfirm();
     });
+  }
+  renderLoading(isLoading, loadingText = "Saving...") {
+    if (isLoading) {
+      this._submitButton.textContent = loadingText;
+    } else {
+      this._submitButton.textContent = this._submitButtonText;
+    }
   }
 }

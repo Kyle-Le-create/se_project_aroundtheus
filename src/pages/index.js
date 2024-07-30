@@ -136,6 +136,7 @@ function handleImageClick(cardData) {
 
 function handleProfileEditSubmit(data) {
   // data is an object with name and subtitle
+  editProfilePopup.renderLoading(true);
   api
     .updateProfileInfo(data)
     .then(() => {
@@ -147,6 +148,9 @@ function handleProfileEditSubmit(data) {
     .catch((err) => {
       console.error(err);
       alert(`${err}, Could not update user info!`);
+    })
+    .finally(() => {
+      editProfilePopup.renderLoading(false);
     });
 }
 
@@ -154,6 +158,7 @@ function handleAddCardSubmit(inputValues) {
   // addCardFormElement.reset();
   // addCardPopup.close();
   // addCardFormValidator.disableButton();
+  addCardPopup.renderLoading(true);
   api
     .addCard({ name: inputValues.title, link: inputValues.url })
     .then((newCardData) => {
@@ -162,7 +167,10 @@ function handleAddCardSubmit(inputValues) {
       addCardFormValidator.resetValidation();
       addCardPopup.close();
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      editProfilePopup.renderLoading(false);
+    });
 }
 
 function handleAvatarFormSubmit(data) {
@@ -233,13 +241,17 @@ editProfileFormValidator.enableValidation();
 function handleDeleteCard(cardId, card) {
   deleteCardPopup.open();
   deleteCardPopup.handleDeleteConfirm(() => {
+    deleteCardPopup.renderLoading(true);
     api
       .deleteCard(cardId)
       .then(() => {
         card.handleDeleteCard();
         deleteCardPopup.close();
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => {
+        editAvatarPopup.renderLoading(false);
+      });
   });
 }
 

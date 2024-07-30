@@ -36,8 +36,10 @@
 
 .modal__container-delete {
   width: 430px;
-  height: 181px;
-  top: 270px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 38px;
 }
 
 .modal__close {
@@ -125,8 +127,7 @@
   max-height: 75vh;
   width: auto;
   height: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0;
   margin-bottom: 20px;
 }
 
