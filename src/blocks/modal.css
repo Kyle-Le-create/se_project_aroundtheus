@@ -35,8 +35,9 @@
 }
 
 .modal__container-delete {
-  width: 362px;
-  height: 109px;
+  width: 430px;
+  height: 181px;
+  top: 270px;
 }
 
 .modal__close {
@@ -217,6 +218,8 @@
 
   .modal__title {
     font-size: 18px;
+    font-weight: 900;
+    font-family: "Inter", Arial, sans-serif;
     padding: 0 0 75px;
   }
 
@@ -239,5 +242,6 @@
     top: -40px;
     height: 26px;
     width: 26px;
+    left: 380px;
   }
 }

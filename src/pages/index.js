@@ -159,7 +159,7 @@ function handleAddCardSubmit(inputValues) {
     .then((newCardData) => {
       cardSection.addItem(newCardData);
       addCardFormElement.reset();
-      addCardFormValidator._resetValidation();
+      addCardFormValidator.resetValidation();
       addCardPopup.close();
     })
     .catch(console.error);
