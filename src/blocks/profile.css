@@ -76,6 +76,37 @@
   cursor: pointer;
 }
 
+.profile__avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__avatar-button {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  box-sizing: content-box;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  background: url(../images/edit-avatar.svg) center no-repeat;
+  visibility: visible;
+  background-color: black;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 880px) {
   .profile__title {
     line-height: 1.2;

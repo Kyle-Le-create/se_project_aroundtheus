@@ -7,7 +7,6 @@ export default class Section {
 
   renderItems() {
     this._data.forEach((item) => {
-      // const cardElement = this._renderer(item);
       this.addItem(item);
     });
   }
@@ -15,6 +14,9 @@ export default class Section {
   addItem(item) {
     const newItem = this._renderer(item);
     this._container.prepend(newItem);
-    // this._container.prepend(item);
+  }
+
+  setItems(items) {
+    this._items = items;
   }
 }
