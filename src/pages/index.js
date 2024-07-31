@@ -169,7 +169,7 @@ function handleAddCardSubmit(inputValues) {
     })
     .catch(console.error)
     .finally(() => {
-      editProfilePopup.renderLoading(false);
+      addCardPopup.renderLoading(false);
     });
 }
 
@@ -226,7 +226,6 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = description;
   editProfilePopup.open();
 });
-api.getUserInfo();
 
 addNewCardButton.addEventListener("click", () => addCardPopup.open());
 
@@ -250,7 +249,7 @@ function handleDeleteCard(cardId, card) {
       })
       .catch(console.error)
       .finally(() => {
-        editAvatarPopup.renderLoading(false);
+        deleteCardPopup.renderLoading(false);
       });
   });
 }
